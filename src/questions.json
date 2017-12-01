@@ -49,7 +49,7 @@
       "choices": ["English - 36", "French - 22", "Italian - 14", "Spanish - 11", "Chinese - 4"]
     },
     {
-      "question": "Name an animal that you wouldn't want in your china shop (other than a bull)",
+      "question": "Name an animal that you would not want in your china shop (other than a bull)",
       "choices": ["Elephant - 47", "Cow - 20", "Horse - 10", "Bear - 8", "Hippo - 4", "Rhino - 4", "Moose - 3"]
     },
     {
@@ -57,8 +57,20 @@
       "choices": ["Car - 45", "House - 41", "Jewellery - 6", "Suit - 4", "Boat - 3"]
     },
     {
-      "question": "Name something that a man had better not take along on his honeymoon",
-      "choices": ["Another Woman - 33", "Cellphone - 17", "His Parents - 14", "Work/Laptop - 12", "His Best Friend - 6", "Golf Clubs - 5", "His Pet - 4"]
+      "question": "Name a reason that your boss would give you a raise (other than that you worked hard)",
+      "choices": ["You are dating your boss - 54", "You are on time - 16", "You are blackmailing your boss - 12", "You have flattered your boss - 5"]
     },
+    {
+      "question": "Name something you would hate to find under you rbed",
+      "choices": ["Monster - 43", "Snack - 16", "Food - 12", "Spider - 10", "Rodent - 8", "Dust - 4", "Person - 3"]
+    },
+    {
+      "question": "Name something people do while riding a rollercoaster",
+      "choices": ["Scream - 43", "Hold Arms Up - 32", "Get Sick - 13", "Laugh - 4", "Close Their Eyes - 4"]
+    },
+    {
+      "question": "Name something people like to do when listening to music",
+      "choices": ["Clean - 21", "Exercise - 18", "Study - 18", "Garden - 12", "Eat - 10", "Dance - 8", "Drive - 8"]
+    }
   ]
 }

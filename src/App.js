@@ -1,25 +1,124 @@
 import React, { Component } from 'react';
 import './App.css';
-import Question from './Question.js';
 
 class App extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      
-    };
+    this.state = { questionNumber : 1 };
+
+    this.handleNext = this.handleNext.bind(this);
   }
+
+  handleNext(){
+    var currentQIndex = this.state.questionNumber;
+
+    currentQIndex++;
+
+    this.setState({ questionNumber: currentQIndex });
+
+    console.log(this.state.questionNumber);
+  }
+
   render() {
+
+    var questions = [
+      {
+        "question": "Name a bad job for someone who is accident-prone",
+        "choices": ["Driver - 33", "Construction - 20", "Police Officer - 11", "Food Service - 10", "Glass Maker - 9", "Window Washer - 7", "Surgeon - 6"]
+      },
+      {
+        "question": "Name a garment you would probably find in the dressing room for a pro-wrestling event",
+        "choices": ["Tights - 32", "Shorts - 17", "Mask - 15", "Robe - 9", "Belt - 8", "Cape - 8", "Leotard - 7"]
+      },
+      {
+        "question": "Name a recreational activity tradionally done in hot weather",
+        "choices": ["Swimming - 44", "Baseball - 18", "Volleyball - 17", "Surfing - 11", "Boating - 7"]
+      },
+      {
+        "question": "Name an article of clothing you cannot wash in the washing machine",
+        "choices": ["Shoe - 29", "Bra - 21", "Hat - 16", "Coat - 13", "Sweater - 9", "Suit - 7", "Gown - 3"]
+      },
+      {
+        "question": "Name a garment you would probably find in the dressing room for a pro-wrestling event",
+        "choices": ["Tights - 32", "Shorts - 17", "Mask - 15", "Robe - 9", "Belt - 8", "Cape - 8", "Leotard - 7"]
+      },
+      {
+        "question": "Name a public place where you're likely to catch a cold or flu bug",
+        "choices": ["School - 41", "Hospital - 21", "Airplane - 10", "Doctors Surgery/Office - 9", "Public Transport - 6", "Shopping Centre - 6", "Work - 5"]
+      },
+      {
+        "question": "Name something people are often chased by in movies",
+        "choices": ["Monsters - 37", "Cars - 22", "Cops - 19", "Bad Guys - 10", "Dogs - 10"]
+      },
+      {
+        "question": "If you met the real prince charming, how would you know it was him?",
+        "choices": ["Wears a Crown - 38", "Rides White Horse - 25", "Good Looking - 14", "Magical Kiss - 12"]
+      },
+      {
+        "question": "Name something that a man had better not take along on his honeymoon",
+        "choices": ["Another Woman - 33", "Cellphone - 17", "His Parents - 14", "Work/Laptop - 12", "His Best Friend - 6", "Golf Clubs - 5", "His Pet - 4"]
+      },
+      {
+        "question": "Name something a customer might do to annoy a waitress ",
+        "choices": ["Send Food Back - 40", "Not Tip - 35", "Flirt - 6", "Snap Fingers - 5", "Spill Drinks - 4"]
+      },
+      {
+        "question": "When he/she is out of money, what might a gambler put on the table?",
+        "choices": ["Jewellery - 33", "Cellphone - 17", "His Parents - 14", "Work/Laptop - 12", "His Best Friend - 6", "Golf Clubs - 5", "His Pet - 4"]
+      },
+      {
+        "question": "Name a language that you often see on restaurant menus",
+        "choices": ["English - 36", "French - 22", "Italian - 14", "Spanish - 11", "Chinese - 4"]
+      },
+      {
+        "question": "Name an animal that you would not want in your china shop (other than a bull)",
+        "choices": ["Elephant - 47", "Cow - 20", "Horse - 10", "Bear - 8", "Hippo - 4", "Rhino - 4", "Moose - 3"]
+      },
+      {
+        "question": "Name something people buy to show they are successful",
+        "choices": ["Car - 45", "House - 41", "Jewellery - 6", "Suit - 4", "Boat - 3"]
+      },
+      {
+        "question": "Name a reason that your boss would give you a raise (other than that you worked hard)",
+        "choices": ["You are dating your boss - 54", "You are on time - 16", "You are blackmailing your boss - 12", "You have flattered your boss - 5"]
+      },
+      {
+        "question": "Name something you would hate to find under you rbed",
+        "choices": ["Monster - 43", "Snack - 16", "Food - 12", "Spider - 10", "Rodent - 8", "Dust - 4", "Person - 3"]
+      },
+      {
+        "question": "Name something people do while riding a rollercoaster",
+        "choices": ["Scream - 43", "Hold Arms Up - 32", "Get Sick - 13", "Laugh - 4", "Close Their Eyes - 4"]
+      },
+      {
+        "question": "Name something people like to do when listening to music",
+        "choices": ["Clean - 21", "Exercise - 18", "Study - 18", "Garden - 12", "Eat - 10", "Dance - 8", "Drive - 8"]
+      }
+    ]
+
+
+    var currentQuestion = questions[this.state.questionNumber];
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Family Feud</h1>
           <h2>BETHEL EDITION</h2>
         </header>
-        <p className="App-intro">
-          <Question />
-        </p>
+        <h1>Question {this.state.questionNumber}</h1>
+        <h2 className='question'>{currentQuestion.question}</h2>
+
+        {currentQuestion.choices.map((choice) => {
+          return (
+            <div key = {choice}>
+              <p>{choice}</p>
+            </div>
+          )
+        })}
+
+        <button onClick = {this.handleNext}>Next Question</button>
+
       </div>
     );
   }
