@@ -90,8 +90,14 @@ input:checked + label {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.buttons {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 button {
-  margin: 1em 0;
   border-radius: 0;
   border: 0;
   letter-spacing: 3px;
@@ -100,4 +106,12 @@ button {
   font-size: 1.1em;
   padding: 1em 2em;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+button:first-of-type{
+  margin-right: 10px;
+}
+
+button:last-of-type{
+  margin-left: 10px;
 }

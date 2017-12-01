@@ -60,7 +60,7 @@ var questions = [
   },
   {
     "question": "Name something you would hate to find under your bed",
-    "choices": ["Monster - 43", "Snack - 16", "Food - 12", "Spider - 10", "Rodent - 8", "Dust - 4", "Person - 3"]
+    "choices": ["Monster - 43", "Snake - 16", "Food - 12", "Spider - 10", "Rodent - 8", "Dust - 4", "Person - 3"]
   },
   {
     "question": "Name something people do while riding a rollercoaster",
@@ -87,6 +87,8 @@ class App extends Component {
     this.state = { questionNumber : 0 };
 
     this.handleNext = this.handleNext.bind(this);
+    this.handlePrev = this.handlePrev.bind(this);
+
   }
 
   handleNext(){
@@ -98,7 +100,18 @@ class App extends Component {
     }
   }
 
+  handlePrev(){
+    var currentQIndex = this.state.questionNumber;
+
+    if(currentQIndex !== 0){
+      currentQIndex--;
+      this.setState({ questionNumber: currentQIndex });
+    }
+  }
+
   render() {
+
+    document.title='Bethel Family Feud';
 
     var currentQuestion = questions[this.state.questionNumber];
 
@@ -122,8 +135,11 @@ class App extends Component {
           })}
         </div>
 
-        <button onClick = {this.handleNext}>Next Question</button>
-
+        <div className = 'buttons'>
+          <button onClick = {this.handlePrev}>Previous</button>
+          <button onClick = {this.handleNext}>Next</button>
+        </div>
+        
       </div>
     );
   }
